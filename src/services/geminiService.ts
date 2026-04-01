@@ -1,7 +1,14 @@
 import { GoogleGenAI, Modality, ThinkingLevel } from "@google/genai";
 import { Kin, Message, UserProfile } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+// Use VITE_ prefix for better compatibility with Vite production builds
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
+
+if (!apiKey) {
+  console.error("CRITICAL: GEMINI_API_KEY or VITE_GEMINI_API_KEY is missing! The app will not function.");
+}
+
+const ai = new GoogleGenAI({ apiKey: apiKey || "" });
 
 export async function generateKinResponse(kin: Kin, history: Message[], userMessage: string, userProfile: UserProfile) {
   const model = "gemini-3-flash-preview";
