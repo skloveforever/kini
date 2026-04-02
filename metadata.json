@@ -1,0 +1,7 @@
+{
+  "name": "update app 1st April",
+  "description": "A Digital Sanctuary for emotional processing with persistent, emotionally intelligent Kin.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
