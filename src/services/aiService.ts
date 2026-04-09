@@ -122,7 +122,7 @@ export async function generateKinResponse(kin: Kin, history: Message[], userMess
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
-        'ngrok-skip-browser-warning': 'true'
+        // 'ngrok-skip-browser-warning': 'true'
       },
       body: JSON.stringify({
         model: ollamaModel,
