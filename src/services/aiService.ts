@@ -155,7 +155,7 @@ export async function* generateKinResponseStream(kin: Kin, history: Message[], u
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
-        'ngrok-skip-browser-warning': 'true'
+        // 'ngrok-skip-browser-warning': 'true'
       },
       body: JSON.stringify({
         model: ollamaModel,
